@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Game_play"
+    android:background="#E3F2FD">
+
+    <TextView
+        android:id="@+id/playerTurn"
+        android:layout_width="338dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="24dp"
+        android:text=" "
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/play_start_button"
+            android:onClick="home"
+            android:text="Home"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/playAgain"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/playAgain"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_marginHorizontal="30dp"
+            android:background="@drawable/play_start_button"
+            android:onClick="playAgainClick"
+            android:text="Play Again"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.example.tic_tac_toe2.TicTacToeBoard
+        android:id="@+id/ticTacToeBoard"
+        android:layout_width="408dp"
+        android:layout_height="404dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerTurn"
+        custom:OColor="#331417"
+        custom:XColor="#102245"
+        custom:boardColor="@color/black" />
+</androidx.constraintlayout.widget.ConstraintLayout>
